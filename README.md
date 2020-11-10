@@ -6,7 +6,7 @@
 
 Anna-Maria Berezovski: annaberezov Hao Wu: HaoWu886 Yuning Gao: Yuninggao
 
-**[View Live Preview](https://startbootstrap.github.io/startbootstrap-business-casual/)**
+
 
 ## Status
 
