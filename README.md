@@ -6,7 +6,6 @@
 
 Anna-Maria Berezovski: annaberezov      
 Hao Wu: HaoWu886         
-
 Yuning Gao: Yuninggao
 
 ## Status
