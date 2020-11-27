@@ -21,7 +21,24 @@
   <link href="css/business-casual.min.css" rel="stylesheet">
 
 </head>
+<?php
+    $mysqli = new mysqli("3.89.186.66", "team1", "password_XZC_1", "team1_db"); 
 
+    if($mysqli === false){
+        echo "ERROR: Could not connect";
+    } else {
+        echo "all good";
+    }
+
+    $sql = "UPDATE customer SET first_name='Eric' WHERE id_customer=4";
+    if($mysqli->query($sql) === true){
+        echo "Records were updated successfully.";
+    } else{
+        echo "ERROR: Could not able to execute  ";
+    }
+
+    $mysqli->close();
+?>
 <body>
 
   <h1 class="site-heading text-center text-white d-none d-lg-block">
