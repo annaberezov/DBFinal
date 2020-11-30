@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                       <div class="card-content">
                             <form method = "post">
                 	            <div class="for-row">
-                                <select name="day">
+                                <select name="day" value="Sunday">
                                          <option value="day-select">Select Day</option>
                                          <option value="Sunday">Sunday</option>
                                          <option value="Monday">Monday</option>
@@ -99,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                          <option value="Friday">Friday</option>
                                          <option value="Saturday">Saturday</option>
                                      </select>
-                                     <select name="hour">
+                                     <select name="hour" value="1600">
                                             <option value="hours-select">Select Hour</option>
                                             <option value="1600">16:00</option>
                                             <option value="1700">17:00</option>
@@ -110,13 +110,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </div>
 
                                <div class ="form-row">
-                                        <input type="text" name="first_name" placeholder="First Name" >
-                                        <input type="text"placeholder="Last Name" name="last_name" >
-                                        <input type="text"placeholder="Phone Number" name="phone_number">
+                                        <input type="text" name="first_name" placeholder="First Name" value="First Name">
+                                        <input type="text"placeholder="Last Name" name="last_name" value="Last Name">
+                                        <input type="text"placeholder="Phone Number" name="phone_number" value="1234567890">
                                </div>
 
                                <div class="form-row">
-                                    <input type="number"placeholder="How many persons?" min="1" name="number_of_people">
+                                    <input type="number"placeholder="How many persons?" min="1" name="number_of_people" value="1">
                                     <input type="submit"value="BOOK TABLE">
 
                               </div>
