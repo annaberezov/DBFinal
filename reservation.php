@@ -58,7 +58,7 @@
     </nav>
 
 <?php
-$hour = $first_name = $last_name = $phone_number = $number_of_people = $day = "";
+$hour = $first_name = $last_name = $phone_number = $number_of_people = $day = "NULL";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $day = test_input($_POST["day"]);
     $hour = test_input($_POST["hour"]);
@@ -75,6 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
 
 ?>
+<form method = "POST">
 <section class="page-section about-heading">
     <div class="container">
       <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/reserve.jpg" alt="">
@@ -87,7 +88,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <span class="section-heading-lower">Make a Reservation</span>
                 </h2>
                       <div class="card-content">
-                            <form method = "post">
                 	            <div class="for-row">
                                 <select name="day" value="Sunday">
                                          <option value="day-select">Select Day</option>
@@ -110,41 +110,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </div>
 
                                <div class ="form-row">
-                                        <input type="text" name="first_name" placeholder="First Name" value="First Name">
-                                        <input type="text"placeholder="Last Name" name="last_name" value="Last Name">
-                                        <input type="text"placeholder="Phone Number" name="phone_number" value="1234567890">
+                                        <input type="text"name="first_name" placeholder="First Name">
+                                        <input type="text"placeholder="Last Name" name="last_name" >
+                                        <input type="text"placeholder="1234567890" name="phone_number" >
                                </div>
 
                                <div class="form-row">
-                                    <input type="number"placeholder="How many persons?" min="1" name="number_of_people" value="1">
-                                    <input type="submit"value="BOOK TABLE">
+                                    <input type="number" placeholder="How many people?" min="1" name="number_of_people">
+                                    <input type="submit" class="button" name="booking" value="Book Table">
 
                               </div>
-                            </form>
                          </div>
                       </div>
-
-                    <?php
-                       $mysqli = new mysqli("3.89.186.66", "team1", "password_XZC_1", "team1_db"); 
-                       
+                      </form>
+                      <?php
+                      if(isset($_POST['booking'])) {
+                        $mysqli = new mysqli("3.89.186.66", "team1", "password_XZC_1", "team1_db"); 
                         // Check connection
                         if($mysqli === false){
-                            die("ERROR: Could not connect. " . $mysqli->connect_error);
+                          die("ERROR: Could not connect. " . $mysqli->connect_error);
                         }
 
                        $sql = "INSERT INTO customer (first_name, last_name, phone_number) VALUES ('$first_name', '$last_name', '$phone_number')"; 
+                       if($mysqli->query($sql) === true){
+                        //echo "Records inserted successfully.";
+                        } else {
+                          echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
+                        }
+
                        if ($mysqli->query($sql) === TRUE){
                         $last_id = $mysqli->insert_id;
-                     //   echo "New record created successfully. Last inserted ID is: " . $last_id;
                        }
+
                        $sql = "INSERT INTO reservation (id_customer, hour, number_of_people, res_day) VALUES ($last_id, $hour, $number_of_people, '$day')";
-                       
-                       //if($mysqli->query($sql) === true){
+                       if($mysqli->query($sql) === true){
                         //echo "Records inserted successfully.";
-                        //} else {
-                        //echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
-                       // }
+                        } else {
+                          echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
+                        }
                        $mysqli->close();
+                      }
                     ?>
             </div>
           </div>
