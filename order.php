@@ -57,6 +57,8 @@
       </div>
     </div>
   </nav>
+
+
   <div class="bg-faded  text-center py-5">
     <div class="title">
         <h4> <span> fresh food for good health</span>  our menu</h4>
@@ -68,7 +70,7 @@
             <div class="menu-content">
                 <h4>Shrimp Shumai <span> $12</span></h4>
                 <p>6 pieces. Steamed/pan fried, ponzu ginger sauce</p>
-                <input type="number">
+                <input type="number" name = >
                 <button>Order</button>
             </div>
         </div>
@@ -92,7 +94,7 @@
             <img src = "menu-4.jpg" alt="">
             <div class="menu-content">
                 <h4>Miso Soup <span> $6</span></h4>
-                <p>green onipn,tofu,seaweed</p>
+                <p>green onion,tofu,seaweed</p>
                 <input type="number">
                 <button>Order</button>
             </div>
