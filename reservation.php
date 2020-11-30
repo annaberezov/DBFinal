@@ -58,14 +58,14 @@
     </nav>
 
 <?php
+$hour = $first_name = $last_name = $phone_number = $number_of_people = $day = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $hour = $first_name = $last_name = $phone_number = $number_of_people = $day = "";
-        $day = test_input($_POST["day"]);
-        $hour = test_input($_POST["hour"]);
-        $first_name = test_input($_POST["first_name"]);
-        $last_name = test_input($_POST["last_name"]);
-        $phone_number = test_input($_POST["phone_number"]);
-        $number_of_people = test_input($_POST["number_of_people"]);
+    $day = test_input($_POST["day"]);
+    $hour = test_input($_POST["hour"]);
+    $first_name = test_input($_POST["first_name"]);
+    $last_name = test_input($_POST["last_name"]);
+    $phone_number = test_input($_POST["phone_number"]);
+    $number_of_people = test_input($_POST["number_of_people"]);
 }
     function test_input($data) {
         $data = trim($data);

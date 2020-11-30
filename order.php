@@ -62,15 +62,13 @@
     <div class="title">
         <h4> <span> fresh food for good health</span>  our menu</h4>
     </div>
-    <form>
+
     <div class="menu">
         <div class="single-menu">
             <img src= "menu-1.jpg" alt="">
             <div class="menu-content">
                 <h4>Shrimp Shumai <span> $12</span></h4>
                 <p>6 pieces. Steamed/pan fried, ponzu ginger sauce</p>
-                <input type="number">
-                <button>Order</button>
             </div>
         </div>
         <div class="single-menu">
@@ -78,24 +76,18 @@
             <div class="menu-content">
                 <h4>Vegetable Spring Roll <span> $8</span></h4>
                 <p>3 pieces.</p>
-                <input type="number">
-                <button>Order</button>
             </div>
         </div><div class="single-menu">
             <img src = "menu-3.jpg" alt="">
             <div class="menu-content">
                 <h4>Cheese Wonton<span> $7.95</span></h4>
                 <p>Deep fried. Crab stick, onion, cream cheese(6 pcs)</p>
-                <input type="number">
-                <button>Order</button>
             </div>
         </div><div class="single-menu">
             <img src = "menu-4.jpg" alt="">
             <div class="menu-content">
                 <h4>Miso Soup <span> $6</span></h4>
                 <p>green onipn,tofu,seaweed</p>
-                <input type="number">
-                <button>Order</button>
             </div>
         </div>
         <div class="single-menu">
@@ -103,8 +95,6 @@
             <div class="menu-content">
                 <h4>Steamed Edamame <span> $8</span></h4>
                 <p>choice of sea salt or spicy sriracha</p>
-                <input type="number">
-                <button>Order</button>
             </div>
         </div>
         <div class="single-menu">
@@ -112,18 +102,14 @@
             <div class="menu-content">
                 <h4>Shishito Peppers <span> $12</span></h4>
                 <p>yuzuyogury,bonito</p>
-                <input type="number">
-                <button>Order</button>
             </div>
         </div>
     </div>
-  </form>
 </div>
-
     
   <footer class="footer text-faded text-center py-5">
     <div class="container">
-      <p class="m-0 small">Copyright &copy; Your Website 2020</p>
+      <p class="m-0 small">Copyright &copy; HAY Sushi 2020</p>
     </div>
   </footer>
 
