@@ -1,3 +1,4 @@
+
 <?php
 error_reporting(E_ALL & ~E_NOTICE);
 ?>
@@ -55,10 +56,10 @@ error_reporting(E_ALL & ~E_NOTICE);
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="reservation.php">Make a Reservation</a>
           </li>
-          <li class="nav-item active px-lg-4">
+          <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="delete.php">Cancel Reservation</a>
           </li>
-          <li class="nav-item px-lg-4">
+          <li class="nav-item active px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="update.php">Update Reservation</a>
           </li>
         </ul>

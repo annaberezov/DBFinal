@@ -1,3 +1,6 @@
+<?php
+error_reporting(E_ALL & ~E_NOTICE);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,6 +57,9 @@
             </li>
             <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="delete.php">Cancel Reservation</a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="update.php">Update Reservation</a>
           </li>
           </ul>
         </div>
@@ -150,6 +156,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         } else {
                           echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
                         }
+
+                        if ($mysqli->query($sql) === TRUE){
+                          $last_id = $mysqli->insert_id;
+                         }
+
                        $mysqli->close();
                       }
                     ?>
