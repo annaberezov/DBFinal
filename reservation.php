@@ -144,6 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         //} else {
                         //echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
                        // }
+                       $mysqli->close();
                     ?>
             </div>
           </div>
