@@ -58,68 +58,181 @@
     </div>
   </nav>
 
+<?php
+$edamame = $peppers = "0";
+$tuna = $salmon = "0";
+$hot_tea = $iced_tea = "0";
 
-  <div class="bg-faded  text-center py-5">
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $edamame = test_input($_POST["edamame"]);
+  $peppers = test_input($_POST["peppers"]);
+  $tuna = test_input($_POST["tuna"]);
+  $salmon = test_input($_POST["salmon"]);
+  $hot_tea = test_input($_POST["hot_tea"]);
+  $iced_tea = test_input($_POST["iced_tea"]);
+}
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+      }
+
+?>/
+
+  <div class="text-faded  text-center py-5">
     <div class="title">
         <h4> <span> fresh food for good health</span>  our menu</h4>
     </div>
     <form>
     <div class="menu">
         <div class="single-menu">
-            <img src= "menu-1.jpg" alt="">
-            <div class="menu-content">
-                <h4>Shrimp Shumai <span> $12</span></h4>
-                <p>6 pieces. Steamed/pan fried, ponzu ginger sauce</p>
-                <input type="number" name = >
-                <button>Order</button>
-            </div>
-        </div>
-        <div class="single-menu">
-            <img src ="menu-2.jpg" alt="">
-            <div class="menu-content">
-                <h4>Vegetable Spring Roll <span> $8</span></h4>
-                <p>3 pieces.</p>
-                <input type="number">
-                <button>Order</button>
-            </div>
-        </div><div class="single-menu">
-            <img src = "menu-3.jpg" alt="">
-            <div class="menu-content">
-                <h4>Cheese Wonton<span> $7.95</span></h4>
-                <p>Deep fried. Crab stick, onion, cream cheese(6 pcs)</p>
-                <input type="number">
-                <button>Order</button>
-            </div>
-        </div><div class="single-menu">
-            <img src = "menu-4.jpg" alt="">
-            <div class="menu-content">
-                <h4>Miso Soup <span> $6</span></h4>
-                <p>green onion,tofu,seaweed</p>
-                <input type="number">
-                <button>Order</button>
-            </div>
-        </div>
-        <div class="single-menu">
-            <img src = "menu-5.jpg" alt="">
+            <img src = "img/menu-5.jpg" alt="">
             <div class="menu-content">
                 <h4>Steamed Edamame <span> $8</span></h4>
                 <p>choice of sea salt or spicy sriracha</p>
-                <input type="number">
+                <input type="number" name="edamame" value="<?php echo($edamame); ?>">
+                <button type="submit">Order</button>
+            </div>
+        </div>
+        <div class="single-menu">
+            <img src = "img/menu-6.jpg" alt="">
+            <div class="menu-content">
+                <h4>Shishito Peppers <span> $12</span></h4>
+                <p>yuzuyogury,bonito</p>
+                <input type="number" name="peppers" value="0">
                 <button>Order</button>
             </div>
         </div>
         <div class="single-menu">
-            <img src = "menu-6.jpg" alt="">
+            <img src = "img/tuna.jpg" alt="">
             <div class="menu-content">
-                <h4>Shishito Peppers <span> $12</span></h4>
-                <p>yuzuyogury,bonito</p>
-                <input type="number">
+                <h4>Tuna Sashimi <span> $2.50</span></h4>
+                <p>Tuna</p>
+                <input type="number" name="tuna" value="0">
+                <button>Order</button>
+            </div>
+        </div>
+        <div class="single-menu">
+            <img src = "img/salmon.jpg" alt="">
+            <div class="menu-content">
+                <h4>Salmon Sashimi <span> $2</span></h4>
+                <p>Salmon</p>
+                <input type="number" name="salmon" value="0">
+                <button>Order</button>
+            </div>
+        </div>
+        <div class="single-menu">
+            <img src = "img/hot_Tea.jpg" alt="">
+            <div class="menu-content">
+                <h4>Hot Tea <span> $1</span></h4>
+                <p>Green Tea, Black Tea</p>
+                <input type="number" name="hot_tea" value="0">
+                <button>Order</button>
+            </div>
+        </div>
+        <div class="single-menu">
+            <img src = "img/iced_tea.jpg" alt="">
+            <div class="menu-content">
+                <h4>Iced Tea <span> $1</span></h4>
+                <p>Sweetened, Unsweetened</p>
+                <input type="number" name="iced_tea" value="0">
                 <button>Order</button>
             </div>
         </div>
     </div>
   </form>
 </div>
+
+<section class="page-section cta">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <div class="cta-inner text-center rounded">
+            <h2 class="section-heading mb-4">
+              <span class="section-heading-upper">Your Order</span>
+              <span class="section-heading-lower">Details</span>
+            </h2>
+            <table class="table">
+              <thread>
+                <tr>
+                  <th scope="col">Item Name</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Price</th>
+                </tr>
+              </thread>
+              <tbody>
+                <tr>
+                  <th scope="row">Steamed Edamame</th>
+                  <td><?php echo($edamame); ?></td>
+                  <td><?php echo($edamame * 8); ?></td>
+                </tr>
+                <tr>
+                  <th scope="row">Shishito Peppers</th>
+                  <td><?php echo($peppers); ?></td>
+                  <td><?php echo($peppers * 12); ?></td>
+                </tr>
+                <tr>
+                  <th scope="row">Tuna Sashimi</th>
+                  <td><?php echo($tuna); ?></td>
+                  <td><?php echo($tuna * 2.50); ?></td>
+                </tr>
+                <tr>
+                  <th scope="row">Salmon Sashimi</th>
+                  <td><?php echo($salmon); ?></td>
+                  <td><?php echo($salmon * 2); ?></td>
+                </tr>
+                <tr>
+                  <th scope="row">Hot Tea</th>
+                  <td><?php echo($hot_tea); ?></td>
+                  <td><?php echo($hot_tea * 1); ?></td>
+                </tr>
+                <tr>
+                  <th scope="row">Iced Tea</th>
+                  <td><?php echo($iced_tea); ?></td>
+                  <td><?php echo($iced_tea * 1); ?></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<?php
+                       $mysqli = new mysqli("3.89.186.66", "team1", "password_XZC_1", "team1_db"); 
+                       
+                        // Check connection
+                        if($mysqli === false){
+                            die("ERROR: Could not connect. " . $mysqli->connect_error);
+                        }
+
+
+                     // $sql = "INSERT INTO customer"
+
+                       //$sql = "INSERT INTO customer (first_name, last_name, phone_number) VALUES ('$first_name', '$last_name', '$phone_number')"; 
+                       //if ($mysqli->query($sql) === TRUE){
+                       // $last_id = $mysqli->insert_id;
+                     //   echo "New record created successfully. Last inserted ID is: " . $last_id;
+                      // }
+                      // $sql = "INSERT INTO reservation (id_customer, hour, number_of_people, res_day) VALUES ($last_id, $hour, $number_of_people, '$day')";
+                       
+                       //if($mysqli->query($sql) === true){
+                        //echo "Records inserted successfully.";
+                        //} else {
+                        //echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
+                       // }
+                    ?>
+
+
+
+
+
+
+
     
   <footer class="footer text-faded text-center py-5">
     <div class="container">
