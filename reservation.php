@@ -52,6 +52,9 @@
             <li class="nav-item active px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="reservation.php">Make a Reservation</a>
             </li>
+            <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="delete.php">Cancel Reservation</a>
+          </li>
           </ul>
         </div>
       </div>
@@ -118,7 +121,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                <div class="form-row">
                                     <input type="number" placeholder="How many people?" min="1" name="number_of_people">
                                     <input type="submit" class="button" name="booking" value="Book Table">
-
                               </div>
                          </div>
                       </div>
@@ -152,6 +154,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                       }
                     ?>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="page-section cta">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <div class="cta-inner text-center rounded">
+            <h2 class="section-heading mb-4">
+            </h2>
+            <p class="mb-0">Your Reservation number is: <?php echo($last_id);?></p>
           </div>
         </div>
       </div>

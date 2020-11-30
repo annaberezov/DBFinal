@@ -38,7 +38,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item active px-lg-4">
+          <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="index.html">Home
               <span class="sr-only">(current)</span>
             </a>
@@ -52,7 +52,7 @@
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="reservation.php">Make a Reservation</a>
           </li>
-          <li class="nav-item px-lg-4">
+          <li class="nav-item active px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="delete.php">Cancel Reservation</a>
           </li>
         </ul>
@@ -60,35 +60,29 @@
     </div>
   </nav>
 
-  <section class="page-section clearfix">
+  <section class="page-section about-heading">
     <div class="container">
-      <div class="intro">
-        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="img/people-eating.jpg" alt="">
-        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
-          <h2 class="section-heading mb-4">
-            <span class="section-heading-upper">Fresh Fish</span>
-            <span class="section-heading-lower">Worth Eating</span>
-          </h2>
-          <p class="mb-3">The freshest fish available at SJU! Caught by hand out of the Schuylkill River by fellow SJU students. You will enjoy every bite guarenteed! 
-          </p>
-          <div class="intro-button mx-auto">
-            <a class="btn btn-primary btn-xl" href="reservation.php">Visit Us Today!</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="about-heading-content">
+        <div class="row">
+          <div class="col-xl-9 col-lg-10 mx-auto">
+            <div class="bg-faded rounded p-5">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Cancel Reservation</span>
+                <span class="section-heading-lower">Information</span>
+              </h2>
+              <table class="table">
+                <tbody>
+                    <tr>
+                        <th><input type="text"name="first_name" placeholder="First Name"></th>
+                        <th><input type="text"placeholder="Last Name" name="last_name" ></th>
+                        <th><input type="text"placeholder="1234567890" name="phone_number" ></th>
+                    </tr>
+                    <tr>
+                        <th scope="row"><input type="submit" class="button" name="cancel" value="Cancel"></th>
+                </tbody>
+                </table>
 
-  <section class="page-section cta">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-9 mx-auto">
-          <div class="cta-inner text-center rounded">
-            <h2 class="section-heading mb-4">
-              <span class="section-heading-upper">Our Promise</span>
-              <span class="section-heading-lower">To You</span>
-            </h2>
-            <p class="mb-0">You will not get any sort of food poisining from eating our food. We do our best to prepare it so it is the most delicious, fresh fish you can get on campus. All the other universities will be jealous when you tell them you eat HAY sushi!</p>
+            </div>
           </div>
         </div>
       </div>
