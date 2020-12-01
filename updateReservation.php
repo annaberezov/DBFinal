@@ -59,7 +59,7 @@ error_reporting(E_ALL & ~E_NOTICE);
             <a class="nav-link text-uppercase text-expanded" href="delete.php">Cancel Reservation</a>
           </li>
           <li class="nav-item active px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="update.php">Update Reservation</a>
+            <a class="nav-link text-uppercase text-expanded" href="updateReservation.php">Update Reservation</a>
           </li>
         </ul>
       </div>
@@ -68,31 +68,22 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 
 <?php
-$reservation_number ="";
+$number_of_people = $hour = $reservation_number ="0";
+$day = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $reservation_number = ($_POST["reservation_number"]);
-}
+    $reservation_number = test_input($_POST["reservation_number"]);
+    $hour = test_input($_POST["hour"]);
+    $number_of_people = test_input($_POST["number_of_people"]);
+    $day = test_input($_POST["day"]);
+  }
 
-$time ="";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $reservation_number = ($_POST["time"]);
-}
-
-$number_of_people="";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $reservation_number = ($_POST["number_of_people"]);
-}
-
-$day="";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $reservation_number = ($_POST["day"]);
-}
-
-
+  function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+  }
 
 ?>
   <section class="page-section about-heading">
@@ -109,13 +100,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <table class="table">
                 <tbody>
                     <tr>
-                        <th>Reservation Number <input type="text"placeholder="123" name="reservation_number"></th>
+                        <th>Reservation Number <input type="number"placeholder="123" name="reservation_number"></th>
                     </tr>
                     <tr>
-                        <th scope="row"><input type="submit" class="button" name="update" value="update"></th>
+                      <th><input type="number" placeholder="How many people?" min="1" name="number_of_people"></th>
                     </tr>
-                </tbody>
+                    <select name="hour" value="1600">
+                          <option value="hours-select">Select Hour</option>
+                          <option value="1600">16:00</option>
+                          <option value="1700">17:00</option>
+                          <option value="1800">18:00</option>
+                          <option value="1900">19:00</option>
+                          <option value="2000">20:00</option>
+                          </select>
+                   <select name="day" value="Sunday">
+                          <option value="day-select">Select Day</option>
+                          <option value="Sunday">Sunday</option>
+                          <option value="Monday">Monday</option>
+                          <option value="Tuesday">Tuesday</option>
+                          <option value="Wednesday">Wednesday</option>
+                          <option value="Thursday">Thursday</option>
+                          <option value="Friday">Friday</option>
+                          <option value="Saturday">Saturday</option>
+                          </select> 
+                      <tr>
+                        <th scope="row"><input type="submit" class="button" name="update" value="update"></th>
+                      </tr>
+                  </tbody>
                 </table>
+              </form>
                 <?php
                     if(isset($_POST['update'])) {
                         $mysqli = new mysqli("3.89.186.66", "team1", "password_XZC_1", "team1_db"); 
@@ -124,15 +137,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     if($mysqli === false){
                         die("ERROR: Could not connect. " . $mysqli->connect_error);
                     }
-                    
-                    $sql = "UPDATE reservation SET time = '$time' , number_of_people ='$number_of_people', day='$day' WHERE id_reservation = $reservation_number";
-                    
-
+                    $sql = "UPDATE reservation SET hour = $hour WHERE id_reservation = $reservation_number";
                     if($mysqli->query($sql) === true){
                         //echo "records inserted successfully.";
                         } else {
                         echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
                        }
+
+                    $sql = "UPDATE reservation SET number_of_people = $number_of_people WHERE id_reservation = $reservation_number";
+                    if($mysqli->query($sql) === true){
+                        //echo "records inserted successfully.";
+                        } else {
+                        echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
+                       }
+
+                    $sql = "UPDATE reservation SET res_day = '$day' WHERE id_reservation = $reservation_number";
+                    if($mysqli->query($sql) === true){
+                        //echo "records inserted successfully.";
+                        } else {
+                        echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
+                       }
+
                        $mysqli->close();
                     }
                     

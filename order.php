@@ -57,7 +57,7 @@
             <a class="nav-link text-uppercase text-expanded" href="delete.php">Cancel Reservation</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="update.php">Update Reservation</a>
+            <a class="nav-link text-uppercase text-expanded" href="updateReservation.php">Update Reservation</a>
           </li>
         </ul>
       </div>
@@ -229,9 +229,9 @@ function test_input($data) {
                 <span class="section-heading-lower">Checkout Information</span>
               </h2>
                 <div class ="form-row">
-                  <input type="text" name="first_name" placeholder="First Name">
-                  <input type="text"placeholder="Last Name" name="last_name">
-                  <input type="text"placeholder="000000000" name="phone_number" >
+                  <input type="text" name="first_name" placeholder="First Name" pattern="[A-Za-z]+" >
+                  <input type="text"placeholder="Last Name" name="last_name" pattern="[A-Za-z]+">
+                  <input type="number"placeholder="Phone Number" name="phone_number" pattern="[0-9]{10}" >
                 </div>
                 <table class="table">
                   <thread>

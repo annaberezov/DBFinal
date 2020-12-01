@@ -59,7 +59,7 @@ error_reporting(E_ALL & ~E_NOTICE);
             <a class="nav-link text-uppercase text-expanded" href="delete.php">Cancel Reservation</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="update.php">Update Reservation</a>
+            <a class="nav-link text-uppercase text-expanded" href="updateReservation.php">Update Reservation</a>
           </li>
           </ul>
         </div>
@@ -119,9 +119,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </div>
 
                                <div class ="form-row">
-                                        <input type="text"name="first_name" placeholder="First Name">
-                                        <input type="text"placeholder="Last Name" name="last_name" >
-                                        <input type="text"placeholder="1234567890" name="phone_number" >
+                                        <input type="text"name="first_name" placeholder="First Name" pattern="[A-Za-z]+">
+                                        <input type="text"placeholder="Last Name" name="last_name" pattern="[A-Za-z]+">
+                                        <input type="number"placeholder="Phone Number" name="phone_number" pattern="[0-9]{10}" >
                                </div>
 
                                <div class="form-row">

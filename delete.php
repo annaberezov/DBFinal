@@ -59,7 +59,7 @@ error_reporting(E_ALL & ~E_NOTICE);
             <a class="nav-link text-uppercase text-expanded" href="delete.php">Cancel Reservation</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="update.php">Update Reservation</a>
+            <a class="nav-link text-uppercase text-expanded" href="updateReservation.php">Update Reservation</a>
           </li>
         </ul>
       </div>
@@ -88,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <table class="table">
                 <tbody>
                     <tr>
-                        <th>Reservation Number <input type="text"placeholder="123" name="reservation_number"></th>
+                        <th>Reservation Number <input type="number"placeholder="123" name="reservation_number"></th>
                     </tr>
                     <tr>
                         <th scope="row"><input type="submit" class="button" name="cancel" value="Cancel"></th>
